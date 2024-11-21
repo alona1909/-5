@@ -1,158 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Positioning Task</title>
+    <title>Моя сайт-визитка</title>
     <style>
-	/* Контейнер с flexbox */
-body {
+        /* Контейнер для Flexbox */
+.achievements-cards {
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 10px;
 }
 
-.box-static {
-    width: 100px;
-    height: 100px;
-    background-color: lightblue;
-    margin: 10px;
+/* Карточки достижений */
+.achievement-card {
+    flex: 1 1 30%;
+    margin: 1vh;
+    padding: 2vh;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(98, 12, 106, 0.884);
 }
 
-/* Относительное позиционирование */
-.box-relative-1 {
-    position: relative;
-    top: 20px;
-    left: 20px;
-    width: 200px;
-    height: 200px;
-    background-color: lightgreen;
-    margin: 10px;
+/* Изображения в карточках */
+.achievement-card img {
+    width: 100%;
+    border-radius: 10px;
 }
 
-.box-relative-2 {
-    position: relative;
-    bottom: 100px;
-    left: 50px;
-    width: 250px;
-    height: 250px;
-    background-color: pink;
-    margin: 10px;
+/* Заголовки в карточках */
+.achievement-card h3 {
+    font-size: 1.5em;
+    margin-top: 1vh;
 }
 
-/* Контейнер для абсолютного позиционирования */
-.container {
-    position: relative;
-    width: 500px;
-    height: 500px;
-    background-color: lightgray;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 10px;
+/* Описание в карточках */
+.achievement-card p {
+    font-size: 1em;
 }
 
-/* Абсолютное позиционирование */
-.box-absolute-1 {
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    width: 100px;
-    height: 100px;
-    background-color: rgb(255, 102, 0);
-}
-
-.box-absolute-2 {
-    position: absolute;
-    top: 100px;
-    left: 100px;
-    width: 150px;
-    height: 150px;
-    background-color: lightblue;
-}
-
-.box-absolute-3 {
-    position: absolute;
-    top: 150px;
-    left: 150px;
-    width: 200px;
-    height: 200px;
-    background-color: purple;
-}
-
-/* Z-индекс для перекрывающихся элементов */
-.box-zindex-1 {
-    position: absolute;
-    z-index: 5;
-    top: 100px;
-    left: 400px;
-    width: 300px;
-    height: 300px;
-    background-color: rgb(234, 50, 96);
-    
-    margin: 10px;
-}
-
-.box-zindex-2 {
-    position: absolute;
-   z-index: 4; 
-   top: 150px;
-    left: 500px;
-    width: 300px;
-    height: 300px;
-    background-color: rgb(7, 161, 112);
-    
-    margin: 10px;
-}
-
-/* Фиксированное позиционирование */
-.box-fixed-1 {
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    width: 100px;
-    height: 100px;
-    background-color: pink;
-}
-
-.box-fixed-2 {
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    width: 100px;
-    height: 100px;
-    background-color: cyan;
+/* Адаптивный дизайн для мобильных устройств */
+@media (max-width: 768px) {
+    .achievements-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .achievement-card {
+        flex: 1 1 90%;
+    }
 }
 
     </style>
 </head>
 <body>
 
-    <!-- Static positioned boxes -->
-    <div class="box-static">Static</div>
-    <div class="box-static">Static</div>
-
-    <!-- Relative positioned boxes -->
-    <div class="box-relative-1">Relative 1</div>
-    <div class="box-relative-2">Relative 2</div>
-
-    <!-- Container with absolute positioned boxes inside -->
-    <div class="container">
-        <div class="box-absolute-1">Absolute 1</div>
-        <div class="box-absolute-2">Absolute 2</div>
-        <div class="box-absolute-3">Absolute 3</div>
-    </div>
-
-    <!-- Overlapping boxes with z-index outside container -->
-    <div class="box-zindex-1">Z-Index 5</div>
-    <div class="box-zindex-2">Z-Index 4</div>
-
-    <!-- Fixed positioned boxes -->
-    <div class="box-fixed-1">Fixed Top-Right</div>
-    <div class="box-fixed-2">Fixed Bottom-Left</div>
+    <!-- Секция 2: Мои достижения -->
+    <section class="achievements" style="background-color: #fdcefa; padding: 5vh 0;">
+        <div class="container" style="max-width: 1440px; margin: 0 auto;">
+            <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 2vh;">Мои достижения</h2>
+            <div class="achievements-cards" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+                <!-- Достижение 1 -->
+                <div class="achievement-card" style="flex: 1 1 30%; margin: 1vh; padding: 2vh; background-color: #efa5e7; border-radius: 10px; box-shadow: 0 4px 8px rgba(98, 12, 106, 0.884);">
+                    <img src="конкурс.jpg" style="width: 100%; border-radius: 10px;">
+                    <h3 style="font-size: 1.5em; margin-top: 1vh;">Первое место на конкурсе вязания</h3>
+                    <p style="font-size: 1em;">Заняла первое место на международном конкурсе вязания в 2022 году.</p>
+                </div>
+                <!-- Достижение 2 -->
+                <div class="achievement-card" style="flex: 1 1 30%; margin: 1vh; padding: 2vh; background-color: #efa5e7; border-radius: 10px; box-shadow: 0 4px 8px rgba(98, 12, 106, 0.884);">
+                    <img src="публикация.webp" style="width: 100%; border-radius: 10px;">
+                    <h3 style="font-size: 1.5em; margin-top: 1vh;">Публикация в журнале</h3>
+                    <p style="font-size: 1em;">Мои работы были опубликованы в известном журнале "Вязание и мода".</p>
+                </div>
+                <!-- Достижение 3 -->
+                <div class="achievement-card" style="flex: 1 1 30%; margin: 1vh; padding: 2vh; background-color: #efa5e7; border-radius: 10px; box-shadow: 0 4px 8px rgba(98, 12, 106, 0.884);">
+                    <img src="вязание4.jpg" style="width: 100%; border-radius: 10px;">
+                    <h3 style="font-size: 1.5em; margin-top: 1vh;">Создание уникальной коллекции</h3>
+                    <p style="font-size: 1em;">Создала уникальную коллекцию вязаных изделий для модного показа.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>
